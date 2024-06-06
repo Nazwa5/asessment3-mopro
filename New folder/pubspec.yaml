@@ -1,0 +1,57 @@
+name: sumut_adventure
+description: "A new Flutter project."
+publish_to: 'none'
+version: 1.0.0+1
+
+environment:
+  sdk: '>=3.3.4 <4.0.0'
+  
+dependencies:
+  flutter:
+    sdk: flutter
+  cupertino_icons: ^1.0.6
+  font_awesome_flutter: ^10.0.0
+  google_maps_flutter: ^2.1.1
+  flutter_map: ^3.0.0
+  latlong2: ^0.8.1
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^3.0.0
+
+flutter:
+  uses-material-design: true
+
+  assets:
+    - assets/image/screen.png
+    - assets/image/screen2.png
+    - assets/image/image.png
+    - assets/image/image 1.png
+    - assets/image/image 2.png
+    - assets/image/image 3.png
+    - assets/image/image 4.png
+    - assets/image/image 5.png
+    - assets/image/image 6.png
+    - assets/image/image 7.png
+    - assets/image/image 8.png
+    - assets/image/image 9.png
+    - assets/image/aek-sijorni.png
+    - assets/image/air-terjun-sipiso-piso.png
+    - assets/image/danau-toba.png
+    - assets/image/danau-toba1.png
+    - assets/image/lumbini-natural-park.png
+    - assets/image/istana-mimun.png
+    - assets/image/kebun-binatang-siantar.png
+    - assets/image/mikie-holiday.png
+    - assets/image/mr-al-mashun.png
+    - assets/image/avatar.png
+
+  fonts:
+    - family: Koulen
+      fonts:
+        - asset: assets/font/Koulen.ttf
+          weight: 400
+    - family: Inter
+      fonts:
+          - asset: assets/font/Inter-VariableFont_slnt,wght.ttf
