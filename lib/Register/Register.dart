@@ -1,7 +1,7 @@
 import 'package:assessment/firebaseHelper/database.dart';
 import 'package:assessment/login/login.dart';
 import 'package:flutter/material.dart';
-import 'package:assessment/MainPage/Home2.dart';
+import 'package:assessment/MainPage/Home1.dart';
 
 class RegisterScreen extends StatefulWidget {
   const RegisterScreen({Key? key}) : super(key: key);

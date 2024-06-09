@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:assessment/MainPage/Home2.dart';
+import 'package:assessment/MainPage/Home1.dart';
 import 'package:assessment/beranda.dart';
 
 class Profile extends StatefulWidget {

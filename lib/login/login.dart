@@ -1,7 +1,8 @@
 import 'package:assessment/firebaseHelper/database.dart';
+import 'package:assessment/login/loginAdmin/loginAdmin.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:assessment/MainPage/Home2.dart';
+import 'package:assessment/MainPage/Home1.dart';
 import 'package:assessment/Register/Register.dart';
 
 class LoginScreen extends StatefulWidget {
@@ -146,44 +147,28 @@ class _LoginScreen extends State<LoginScreen> {
                     ),
                   ),
                   const SizedBox(height: 26),
-                  const Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Text(
-                        'Or login with',
-                        style: TextStyle(
-                          fontFamily: 'Inter',
-                          fontSize: 16,
-                          fontWeight: FontWeight.w400,
-                          color: Colors.black38,
-                        ),
-                      ),
-                    ],
-                  ),
-                  const SizedBox(height: 15),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      IconButton(
-                        icon: const FaIcon(FontAwesomeIcons.google),
-                        color: Colors.red,
-                        iconSize: 30,
+                      TextButton(
+                        child: const Text('Or Login As Admin',
+                            style: TextStyle(
+                                color: Colors.black,
+                                fontFamily: 'Inter',
+                                fontSize: 14,
+                                fontWeight: FontWeight.w400)),
                         onPressed: () {
-                          // Tambahkan aksi untuk login dengan Google
+                          Navigator.pushReplacement(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => const LoginAdminScreen(),
+                            ),
+                          );
                         },
-                      ),
-                      const SizedBox(width: 8),
-                      IconButton(
-                        icon: const FaIcon(FontAwesomeIcons.facebook),
-                        color: Colors.blue,
-                        iconSize: 30,
-                        onPressed: () {
-                          // Tambahkan aksi untuk login dengan Facebook
-                        },
-                      ),
+                      )
                     ],
                   ),
-                  const SizedBox(height: 95),
+                  const SizedBox(height: 15),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [

@@ -1,6 +1,6 @@
 import 'package:assessment/search/desc.dart';
 import 'package:flutter/material.dart';
-import 'package:assessment/MainPage/Home2.dart';
+import 'package:assessment/MainPage/Home1.dart';
 
 class Destinasi extends StatefulWidget {
   const Destinasi({Key? key}) : super(key: key);
