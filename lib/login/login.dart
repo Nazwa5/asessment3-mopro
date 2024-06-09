@@ -1,7 +1,6 @@
 import 'package:assessment/firebaseHelper/database.dart';
 import 'package:assessment/login/loginAdmin/loginAdmin.dart';
 import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:assessment/MainPage/Home1.dart';
 import 'package:assessment/Register/Register.dart';
 

@@ -3,11 +3,8 @@ import 'package:assessment/adminPage/detailScreen.dart';
 import 'package:assessment/createDestination/createDestination.dart';
 import 'package:assessment/destinasi/destinasi.dart';
 import 'package:assessment/firebaseHelper/database.dart';
-import 'package:assessment/search/desc.dart';
-import 'package:assessment/search/dest.dart';
 import 'package:flutter/material.dart';
 import 'package:assessment/profile/profile.dart';
-import 'package:assessment/search/search.dart';
 
 class AdminHomeScreen extends StatefulWidget {
   const AdminHomeScreen({Key? key}) : super(key: key);
