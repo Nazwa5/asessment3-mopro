@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "862200294798",
+    "project_id": "sumut-adventure",
+    "storage_bucket": "sumut-adventure.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:862200294798:android:8648ad63309e2d09fa88df",
+        "android_client_info": {
+          "package_name": "com.example.assessment"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDLNCrmTRiZND0Px4Xe-UP6V-pt0QD40FY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,3 +1,4 @@
+import 'package:assessment/firebaseHelper/database.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:assessment/MainPage/Home2.dart';
@@ -11,6 +12,10 @@ class LoginScreen extends StatefulWidget {
 }
 
 class _LoginScreen extends State<LoginScreen> {
+  login() async {
+    DatabaseUser().readUser();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -98,14 +103,7 @@ class _LoginScreen extends State<LoginScreen> {
                   SizedBox(
                     width: double.infinity,
                     child: ElevatedButton(
-                      onPressed: () {
-                        Navigator.pushReplacement(
-                          context,
-                          MaterialPageRoute(
-                            builder: (context) => const Home1(),
-                          ),
-                        );
-                      },
+                      onPressed: login,
                       style: ElevatedButton.styleFrom(
                         backgroundColor: const Color(0xFF554FFC),
                         padding: const EdgeInsets.symmetric(vertical: 26),
