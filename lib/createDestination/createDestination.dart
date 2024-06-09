@@ -16,6 +16,7 @@ class _CreateDestinationScreenState extends State<CreateDestinationScreen> {
   final TextEditingController ratingController = TextEditingController();
   final TextEditingController descriptionController = TextEditingController();
   final TextEditingController totalReviewController = TextEditingController();
+  final TextEditingController urlController = TextEditingController();
 
   create() async {
     await DatabaseDestination().createDestination(
@@ -23,7 +24,8 @@ class _CreateDestinationScreenState extends State<CreateDestinationScreen> {
         locationController.text,
         descriptionController.text,
         ratingController.text,
-        totalReviewController.text, () {
+        totalReviewController.text,
+        urlController.text, () {
       Navigator.push(context, MaterialPageRoute(builder: (context) {
         return const AdminHomeScreen();
       }));
@@ -137,6 +139,19 @@ class _CreateDestinationScreenState extends State<CreateDestinationScreen> {
                       fontWeight: FontWeight.w400,
                     ),
                   ),
+                ),
+              ),
+              const SizedBox(height: 16),
+              TextField(
+                controller: descriptionController,
+                decoration: InputDecoration(
+                  labelText: 'Link Google Map',
+                  hintStyle: TextStyle(
+                      color: Colors.grey[300],
+                      fontFamily: 'Inter',
+                      fontSize: 14,
+                      fontWeight: FontWeight.w400),
+                  border: const OutlineInputBorder(),
                 ),
               ),
               const SizedBox(height: 26),

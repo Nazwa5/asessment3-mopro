@@ -1,6 +1,4 @@
 import 'package:assessment/MainPage/Home1.dart';
-import 'package:assessment/adminPage/adminMain.dart';
-import 'package:assessment/adminPage/editDestination.dart';
 import 'package:assessment/firebaseHelper/database.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';

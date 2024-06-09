@@ -1,7 +1,6 @@
 import 'package:assessment/destinasi/destinasi.dart';
 import 'package:assessment/firebaseHelper/database.dart';
 import 'package:assessment/search/detailScreen.dart';
-import 'package:assessment/search/dest.dart';
 import 'package:flutter/material.dart';
 import 'package:assessment/profile/profile.dart';
 import 'package:assessment/search/search.dart';
@@ -16,6 +15,7 @@ class Home1 extends StatefulWidget {
 class _Home1 extends State<Home1> {
   List listDestination = [];
   List popularDestination = [];
+  TextEditingController searchController = TextEditingController();
 
   void _navigateToDestination(BuildContext context, String id) {
     Navigator.push(
@@ -146,28 +146,29 @@ class _Home1 extends State<Home1> {
                               top: 55,
                               left: 16,
                               right: 16,
-                              child: GestureDetector(
-                                onTap: () {
-                                  Navigator.push(
-                                    context,
-                                    MaterialPageRoute(
-                                      builder: (context) => const Search(),
-                                    ),
-                                  );
-                                },
-                                child: Container(
-                                  padding: const EdgeInsets.symmetric(
-                                      horizontal: 16),
-                                  decoration: BoxDecoration(
-                                    color: Colors.white.withOpacity(0.8),
-                                    borderRadius: BorderRadius.circular(8),
-                                  ),
-                                  child: const TextField(
-                                    decoration: InputDecoration(
-                                      hintText: 'Cari destinasi',
-                                      border: InputBorder.none,
-                                      icon: Icon(Icons.search),
-                                    ),
+                              child: Container(
+                                padding:
+                                    const EdgeInsets.symmetric(horizontal: 16),
+                                decoration: BoxDecoration(
+                                  color: Colors.white.withOpacity(0.8),
+                                  borderRadius: BorderRadius.circular(8),
+                                ),
+                                child: TextField(
+                                  onSubmitted: (value) => {
+                                    Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                        builder: (context) => Search(
+                                          search: searchController.text,
+                                        ),
+                                      ),
+                                    )
+                                  },
+                                  controller: searchController,
+                                  decoration: const InputDecoration(
+                                    hintText: 'Cari destinasi',
+                                    border: InputBorder.none,
+                                    icon: Icon(Icons.search),
                                   ),
                                 ),
                               ),
@@ -231,19 +232,6 @@ class _Home1 extends State<Home1> {
                     ),
                   ),
                 ],
-              ),
-              floatingActionButton: FloatingActionButton(
-                onPressed: () {
-                  // belum beres codenya
-                },
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(30.0),
-                ),
-                backgroundColor: const Color(0xFF554FFC),
-                child: const Icon(
-                  Icons.headset_rounded,
-                  color: Colors.white,
-                ),
               ),
             ));
   }

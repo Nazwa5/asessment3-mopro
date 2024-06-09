@@ -60,6 +60,7 @@ class DatabaseDestination extends Database {
       String description,
       String rating,
       String totalReview,
+      String url,
       ifSuccess,
       ifFail) async {
     try {
@@ -74,7 +75,8 @@ class DatabaseDestination extends Database {
           'name': name,
           'location': location,
           'description': description,
-          'views': 0
+          'views': 0,
+          'mapUrl': url,
         });
 
         create.then((value) {
@@ -156,8 +158,11 @@ class DatabaseDestination extends Database {
 
   Future<List> getPopularDestination() async {
     try {
-      var snapshot =
-          await db.collection('destination').orderBy('views').limit(5).get();
+      var snapshot = await db
+          .collection('destination')
+          .orderBy('views', descending: true)
+          .limit(5)
+          .get();
       List data = [];
       snapshot.docs.forEach((element) {
         data.add(element.data());
@@ -180,6 +185,23 @@ class DatabaseDestination extends Database {
       update.then((value) {});
     } catch (e) {
       debugPrint(e.toString());
+    }
+  }
+
+  Future<List> search(String search) async {
+    try {
+      var snapshot = await db
+          .collection('destination')
+          .where('name', isEqualTo: search)
+          .get();
+      List data = [];
+      snapshot.docs.forEach((element) {
+        data.add(element.data());
+      });
+      return data;
+    } catch (e) {
+      debugPrint(e.toString());
+      return [];
     }
   }
 }
