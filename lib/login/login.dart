@@ -12,8 +12,28 @@ class LoginScreen extends StatefulWidget {
 }
 
 class _LoginScreen extends State<LoginScreen> {
+  TextEditingController usernameController = TextEditingController();
+  TextEditingController passwordController = TextEditingController();
+
   login() async {
-    DatabaseUser().readUser();
+    DatabaseUser()
+        .login(usernameController.text, passwordController.text)
+        .then((value) {
+      if (value == true) {
+        Navigator.pushReplacement(
+          context,
+          MaterialPageRoute(
+            builder: (context) => const Home1(),
+          ),
+        );
+      } else {
+        ScaffoldMessenger.of(context).showSnackBar(
+          const SnackBar(
+            content: Text('Username atau password salah'),
+          ),
+        );
+      }
+    });
   }
 
   @override
@@ -59,6 +79,7 @@ class _LoginScreen extends State<LoginScreen> {
                   ),
                   const SizedBox(height: 40),
                   TextField(
+                    controller: usernameController,
                     decoration: InputDecoration(
                       labelText: 'Username',
                       hintStyle: TextStyle(
@@ -71,6 +92,7 @@ class _LoginScreen extends State<LoginScreen> {
                   ),
                   const SizedBox(height: 16),
                   TextField(
+                    controller: passwordController,
                     decoration: InputDecoration(
                       labelText: 'Password',
                       hintStyle: TextStyle(

@@ -6,31 +6,37 @@ class Database {
 }
 
 class DatabaseUser extends Database {
-  Future<void> addUser(String name, String email, String password) async {
-    await db.collection('users').add({
-      'name': name,
-      'email': email,
-      'password': password,
-    });
-  }
+  Future<void> register(
+      String username, String password, ifSuccess, ifFail) async {
+    try {
+      var data = await db.collection('user').doc(username).get();
+      if (data.exists) {
+        ifFail();
+        return;
+      } else {
+        var register = db.collection('user').doc(username).set({
+          'username': username,
+          'password': password,
+        });
 
-  Future<void> updateUser(
-      String id, String name, String email, String password) async {
-    await db.collection('users').doc(id).update({
-      'name': name,
-      'email': email,
-      'password': password,
-    });
-  }
-
-  Future<void> deleteUser(String id) async {
-    await db.collection('users').doc(id).delete();
-  }
-
-  Future<void> readUser() async {
-    var snapshot = await db.collection('user').get();
-    for (var doc in snapshot.docs) {
-      debugPrint(doc.data().toString());
+        register.then((value) {
+          ifSuccess();
+        });
+      }
+    } catch (e) {
+      debugPrint(e.toString());
     }
+  }
+
+  Future<bool> login(String username, String password) async {
+    try {
+      var snapshot = await db.collection('user').doc(username).get();
+      if (snapshot.data()?['password'] == password) {
+        return true;
+      }
+    } catch (e) {
+      debugPrint(e.toString());
+    }
+    return false;
   }
 }
