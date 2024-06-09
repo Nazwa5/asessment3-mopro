@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:assessment/MainPage/Home1.dart';
 import '../search/dest.dart'; // Assuming you still need this import for other destinations
-import '../search/desc.dart'; // Import the DetailScreen
+import 'detailScreen.dart'; // Import the DetailScreen
 
 class Search extends StatefulWidget {
   const Search({Key? key}) : super(key: key);
@@ -16,7 +16,7 @@ class _Search extends State<Search> {
       Navigator.push(
         context,
         MaterialPageRoute(
-          builder: (context) => const DetailScreen(),
+          builder: (context) => const DetailScreen(id: '1'),
         ),
       );
     } else {

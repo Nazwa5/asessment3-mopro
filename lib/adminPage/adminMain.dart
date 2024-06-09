@@ -27,11 +27,13 @@ class _AdminHomeScreen extends State<AdminHomeScreen> {
     );
   }
 
+  // Logic untuk mengambil data dari firebase
   Future<void> fetchData() async {
     var destinations = await DatabaseDestination().getDestination();
     listDestination = destinations;
   }
 
+  // Inisialisasi data ketika pertama kali dijalankan
   @override
   void initState() {
     super.initState();
@@ -40,6 +42,7 @@ class _AdminHomeScreen extends State<AdminHomeScreen> {
 
   @override
   Widget build(BuildContext context) {
+    // Scaffold untuk menampilkan halaman dan Future untuk mengambil data dari firebase yang bersifat asyncronus
     return FutureBuilder(
         future: fetchData(),
         builder: (context, _) => Scaffold(

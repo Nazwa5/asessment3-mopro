@@ -1,4 +1,4 @@
-import 'package:assessment/search/desc.dart';
+import 'package:assessment/search/detailScreen.dart';
 import 'package:flutter/material.dart';
 import 'package:assessment/MainPage/Home1.dart';
 
@@ -103,7 +103,8 @@ class _Destinasi extends State<Destinasi> {
                             Navigator.pushReplacement(
                               context,
                               MaterialPageRoute(
-                                builder: (context) => const DetailScreen(),
+                                builder: (context) =>
+                                    const DetailScreen(id: '1'),
                               ),
                             );
                           },

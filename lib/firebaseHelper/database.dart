@@ -74,6 +74,7 @@ class DatabaseDestination extends Database {
           'name': name,
           'location': location,
           'description': description,
+          'views': 0
         });
 
         create.then((value) {
@@ -148,6 +149,35 @@ class DatabaseDestination extends Database {
       delete.then((value) {
         ifSuccess();
       });
+    } catch (e) {
+      debugPrint(e.toString());
+    }
+  }
+
+  Future<List> getPopularDestination() async {
+    try {
+      var snapshot =
+          await db.collection('destination').orderBy('views').limit(5).get();
+      List data = [];
+      snapshot.docs.forEach((element) {
+        data.add(element.data());
+      });
+      return data;
+    } catch (e) {
+      debugPrint(e.toString());
+      return [];
+    }
+  }
+
+  Future<void> addView(String id) async {
+    try {
+      var data = await db.collection('destination').doc(id).get();
+      var views = data.data()?['views'] + 1;
+      var update = db.collection('destination').doc(id).update({
+        'views': views,
+      });
+
+      update.then((value) {});
     } catch (e) {
       debugPrint(e.toString());
     }

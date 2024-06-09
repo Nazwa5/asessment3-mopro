@@ -1,5 +1,5 @@
 import 'package:assessment/Maps/Rute.dart';
-import 'package:assessment/search/desc.dart';
+import 'package:assessment/search/detailScreen.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
@@ -40,14 +40,7 @@ class _MapScreen extends State<MapScreen> {
                   top: 40,
                   left: 16,
                   child: GestureDetector(
-                    onTap: () {
-                      Navigator.pushReplacement(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) => const DetailScreen(),
-                        ),
-                      );
-                    },
+                    onTap: () {},
                     child: Container(
                       child: const Icon(
                         Icons.arrow_back,
