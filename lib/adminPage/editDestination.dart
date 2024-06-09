@@ -16,6 +16,7 @@ class _EditDestinationScreenState extends State<EditDestinationScreen> {
   final TextEditingController ratingController = TextEditingController();
   final TextEditingController descriptionController = TextEditingController();
   final TextEditingController totalReviewController = TextEditingController();
+  final TextEditingController urlController = TextEditingController();
 
   Map<String, dynamic>? destination;
   Future<void> fetchData() async {
@@ -27,6 +28,7 @@ class _EditDestinationScreenState extends State<EditDestinationScreen> {
     ratingController.text = destination?['rating'] ?? '';
     descriptionController.text = destination?['description'] ?? '';
     totalReviewController.text = destination?['totalReview'] ?? '';
+    urlController.text = destination?['mapUrl'] ?? '';
   }
 
   update() async {
@@ -90,6 +92,19 @@ class _EditDestinationScreenState extends State<EditDestinationScreen> {
                   controller: locationController,
                   decoration: InputDecoration(
                     labelText: 'Lokasi',
+                    hintStyle: TextStyle(
+                        color: Colors.grey[300],
+                        fontFamily: 'Inter',
+                        fontSize: 14,
+                        fontWeight: FontWeight.w400),
+                    border: const OutlineInputBorder(),
+                  ),
+                ),
+                const SizedBox(height: 16),
+                TextField(
+                  controller: urlController,
+                  decoration: InputDecoration(
+                    labelText: 'Link Google Maps',
                     hintStyle: TextStyle(
                         color: Colors.grey[300],
                         fontFamily: 'Inter',

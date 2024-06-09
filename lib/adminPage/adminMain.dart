@@ -3,6 +3,7 @@ import 'package:assessment/adminPage/detailScreen.dart';
 import 'package:assessment/createDestination/createDestination.dart';
 import 'package:assessment/destinasi/destinasi.dart';
 import 'package:assessment/firebaseHelper/database.dart';
+import 'package:assessment/login/login.dart';
 import 'package:flutter/material.dart';
 import 'package:assessment/profile/profile.dart';
 
@@ -46,69 +47,21 @@ class _AdminHomeScreen extends State<AdminHomeScreen> {
     return FutureBuilder(
         future: fetchData(),
         builder: (context, _) => Scaffold(
-              appBar: PreferredSize(
-                preferredSize: const Size.fromHeight(35.0),
-                child: AppBar(),
-              ),
-              drawer: Drawer(
-                child: ListView(
-                  padding: EdgeInsets.zero,
-                  children: <Widget>[
-                    const DrawerHeader(
-                      decoration: BoxDecoration(
-                        color: Colors.blue,
-                      ),
-                      child: Text(
-                        'Menu',
-                        style: TextStyle(
-                          color: Colors.white,
-                          fontSize: 24,
+              appBar: AppBar(
+                title: const Text('Admin Destinasi'),
+                actions: [
+                  IconButton(
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => const LoginScreen(),
                         ),
-                      ),
-                    ),
-                    ListTile(
-                      leading: const Icon(Icons.home),
-                      title: const Text('Home'),
-                      onTap: () {
-                        // Handle Home navigation
-                        Navigator.pop(context);
-                        Navigator.pushReplacement(
-                          context,
-                          MaterialPageRoute(
-                            builder: (context) => const Home1(),
-                          ),
-                        );
-                      },
-                    ),
-                    ListTile(
-                      leading: const Icon(Icons.map_sharp),
-                      title: const Text('Destinasi'),
-                      onTap: () {
-                        Navigator.pop(context);
-                        Navigator.pushReplacement(
-                          context,
-                          MaterialPageRoute(
-                            builder: (context) => const Destinasi(),
-                          ),
-                        );
-                      },
-                    ),
-                    ListTile(
-                      leading: const Icon(Icons.person),
-                      title: const Text('Profile'),
-                      onTap: () {
-                        // Handle Settings navigation
-                        Navigator.pop(context);
-                        Navigator.pushReplacement(
-                          context,
-                          MaterialPageRoute(
-                            builder: (context) => const Profile(),
-                          ),
-                        );
-                      },
-                    ),
-                  ],
-                ),
+                      );
+                    },
+                    icon: const Icon(Icons.logout),
+                  ),
+                ],
               ),
               body: Stack(
                 fit: StackFit.expand,

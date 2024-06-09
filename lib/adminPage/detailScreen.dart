@@ -1,3 +1,5 @@
+import 'package:assessment/adminPage/addActivities.dart';
+import 'package:assessment/adminPage/addSouvenir.dart';
 import 'package:assessment/adminPage/adminMain.dart';
 import 'package:assessment/adminPage/editDestination.dart';
 import 'package:assessment/firebaseHelper/database.dart';
@@ -250,8 +252,9 @@ class _AdminDetailScreenState extends State<AdminDetailScreen> {
                                     ),
                                   ),
                                   child: const Text(
-                                    'Delete',
-                                    style: TextStyle(color: Colors.white),
+                                    'Hapus',
+                                    style: TextStyle(
+                                        color: Colors.white, fontSize: 10),
                                   ),
                                 ),
                                 SizedBox(width: 8),
@@ -275,7 +278,57 @@ class _AdminDetailScreenState extends State<AdminDetailScreen> {
                                   ),
                                   child: const Text(
                                     'Edit',
-                                    style: TextStyle(color: Colors.white),
+                                    style: TextStyle(
+                                        color: Colors.white, fontSize: 10),
+                                  ),
+                                ),
+                                SizedBox(width: 8),
+                                ElevatedButton(
+                                  onPressed: () {
+                                    Navigator.pushReplacement(
+                                      context,
+                                      MaterialPageRoute(
+                                        builder: (context) =>
+                                            AddActivitiesScreen(
+                                          id: widget.id,
+                                        ),
+                                      ),
+                                    );
+                                  },
+                                  style: ElevatedButton.styleFrom(
+                                    backgroundColor: Colors.blue,
+                                    shape: RoundedRectangleBorder(
+                                      borderRadius: BorderRadius.circular(12),
+                                    ),
+                                  ),
+                                  child: const Text(
+                                    'Aktivitas',
+                                    style: TextStyle(
+                                        color: Colors.white, fontSize: 10),
+                                  ),
+                                ),
+                                SizedBox(width: 8),
+                                ElevatedButton(
+                                  onPressed: () {
+                                    Navigator.pushReplacement(
+                                      context,
+                                      MaterialPageRoute(
+                                        builder: (context) => AddSouvenirScreen(
+                                          id: widget.id,
+                                        ),
+                                      ),
+                                    );
+                                  },
+                                  style: ElevatedButton.styleFrom(
+                                    backgroundColor: Colors.blue,
+                                    shape: RoundedRectangleBorder(
+                                      borderRadius: BorderRadius.circular(12),
+                                    ),
+                                  ),
+                                  child: const Text(
+                                    'Souvenir',
+                                    style: TextStyle(
+                                        color: Colors.white, fontSize: 10),
                                   ),
                                 )
                               ],
@@ -337,7 +390,7 @@ class _AdminDetailScreenState extends State<AdminDetailScreen> {
                                   souvenirCard(
                                     souvenir?['name'] ?? 'No Data',
                                     souvenir?['image'] ??
-                                        'assets/image/Souvenir.png',
+                                        'assets/image/image 7.png',
                                   ),
                               ],
                             ),

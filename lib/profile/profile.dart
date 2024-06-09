@@ -1,6 +1,6 @@
+import 'package:assessment/login/login.dart';
 import 'package:flutter/material.dart';
 import 'package:assessment/MainPage/Home1.dart';
-import 'package:assessment/beranda.dart';
 
 class Profile extends StatefulWidget {
   const Profile({Key? key}) : super(key: key);
@@ -131,7 +131,7 @@ class _Profile extends State<Profile> {
                     Navigator.pushReplacement(
                       context,
                       MaterialPageRoute(
-                        builder: (context) => const HomePage(),
+                        builder: (context) => const LoginScreen(),
                       ),
                     );
                   },

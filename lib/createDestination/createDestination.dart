@@ -119,6 +119,19 @@ class _CreateDestinationScreenState extends State<CreateDestinationScreen> {
                 ),
               ),
               const SizedBox(height: 16),
+              TextField(
+                controller: urlController,
+                decoration: InputDecoration(
+                  labelText: 'Link Google Map',
+                  hintStyle: TextStyle(
+                      color: Colors.grey[300],
+                      fontFamily: 'Inter',
+                      fontSize: 14,
+                      fontWeight: FontWeight.w400),
+                  border: const OutlineInputBorder(),
+                ),
+              ),
+              const SizedBox(height: 16),
               SizedBox(
                 width: double.infinity,
                 child: ElevatedButton(
@@ -142,19 +155,6 @@ class _CreateDestinationScreenState extends State<CreateDestinationScreen> {
                 ),
               ),
               const SizedBox(height: 16),
-              TextField(
-                controller: descriptionController,
-                decoration: InputDecoration(
-                  labelText: 'Link Google Map',
-                  hintStyle: TextStyle(
-                      color: Colors.grey[300],
-                      fontFamily: 'Inter',
-                      fontSize: 14,
-                      fontWeight: FontWeight.w400),
-                  border: const OutlineInputBorder(),
-                ),
-              ),
-              const SizedBox(height: 26),
             ],
           ),
         ),

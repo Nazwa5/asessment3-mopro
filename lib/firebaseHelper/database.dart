@@ -77,6 +77,8 @@ class DatabaseDestination extends Database {
           'description': description,
           'views': 0,
           'mapUrl': url,
+          'rating': rating,
+          'totalReview': totalReview,
         });
 
         create.then((value) {
@@ -202,6 +204,46 @@ class DatabaseDestination extends Database {
     } catch (e) {
       debugPrint(e.toString());
       return [];
+    }
+  }
+
+  Future<void> addActivities(String id, String name, ifSucces, ifFailed) async {
+    try {
+      List newData;
+      var data = db.collection('destination').doc(id).get();
+
+      data
+          .then((value) => {
+                newData = value.data()?['activities'] ?? [],
+                newData.add({'name': name}),
+                db.collection('destination').doc(id).update({
+                  'activities': newData,
+                })
+              })
+          .then((value) => {ifSucces()});
+    } catch (e) {
+      debugPrint(e.toString());
+      ifFailed();
+    }
+  }
+
+  Future<void> addSouvenirs(String id, String name, ifSucces, ifFailed) async {
+    try {
+      List newData;
+      var data = db.collection('destination').doc(id).get();
+
+      data
+          .then((value) => {
+                newData = value.data()?['souvenirs'] ?? [],
+                newData.add({'name': name}),
+                db.collection('destination').doc(id).update({
+                  'souvenirs': newData,
+                })
+              })
+          .then((value) => {ifSucces()});
+    } catch (e) {
+      debugPrint(e.toString());
+      ifFailed();
     }
   }
 }
