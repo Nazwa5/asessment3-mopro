@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:assessment/Register/Register.dart';
-import 'package:assessment/login/login.dart';
 
 class Home extends StatefulWidget {
   const Home({Key? key}) : super(key: key);

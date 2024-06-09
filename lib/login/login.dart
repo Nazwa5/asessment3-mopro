@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:assessment/MainPage/Home.dart';
 import 'package:assessment/MainPage/Home2.dart';
 import 'package:assessment/Register/Register.dart';
 

@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:assessment/MainPage/Home.dart';
 import 'package:assessment/MainPage/Home2.dart';
 
 class RegisterScreen extends StatefulWidget {

@@ -3,7 +3,6 @@ import 'package:assessment/search/desc.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
-import 'package:assessment/search/search.dart';
 
 class MapScreen extends StatefulWidget {
   const MapScreen({Key? key}) : super(key: key);
@@ -13,8 +12,6 @@ class MapScreen extends StatefulWidget {
 
 class _MapScreen extends State<MapScreen> {
   late GoogleMapController mapController;
-
-  final LatLng _center = const LatLng(2.6667, 98.6667);
 
   void _onMapCreated(GoogleMapController controller) {
     mapController = controller;
