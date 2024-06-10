@@ -38,7 +38,8 @@ class _EditDestinationScreenState extends State<EditDestinationScreen> {
         locationController.text,
         descriptionController.text,
         ratingController.text,
-        totalReviewController.text, () {
+        totalReviewController.text,
+        urlController.text, () {
       Navigator.push(context, MaterialPageRoute(builder: (context) {
         return const AdminHomeScreen();
       }));

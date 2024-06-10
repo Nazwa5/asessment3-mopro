@@ -121,6 +121,7 @@ class DatabaseDestination extends Database {
       String description,
       String rating,
       String totalReview,
+      String url,
       ifSuccess,
       ifFail) async {
     try {
@@ -135,6 +136,7 @@ class DatabaseDestination extends Database {
           'description': description,
           'rating': rating,
           'totalReview': totalReview,
+          'mapUrl': url,
         });
 
         update.then((value) {

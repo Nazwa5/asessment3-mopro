@@ -1,8 +1,9 @@
 import 'package:assessment/firebaseHelper/database.dart';
 import 'package:flutter/material.dart';
-import 'package:assessment/MainPage/Home1.dart'; // Assuming you still need this import for other destinations
+import 'package:assessment/MainPage/Home.dart'; // Assuming you still need this import for other destinations
 import 'detailScreen.dart'; // Import the DetailScreen
 
+// ignore: must_be_immutable
 class Search extends StatefulWidget {
   String search;
   Search({super.key, required this.search});

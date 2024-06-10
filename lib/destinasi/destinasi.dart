@@ -1,7 +1,7 @@
 import 'package:assessment/firebaseHelper/database.dart';
 import 'package:assessment/search/detailScreen.dart';
 import 'package:flutter/material.dart';
-import 'package:assessment/MainPage/Home1.dart';
+import 'package:assessment/MainPage/Home.dart';
 
 class Destinasi extends StatefulWidget {
   const Destinasi({Key? key}) : super(key: key);
